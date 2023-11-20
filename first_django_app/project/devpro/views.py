@@ -6,6 +6,7 @@ from rest_framework.generics import DestroyAPIView
 from rest_framework.generics import UpdateAPIView
 from rest_framework.generics import RetrieveAPIView
 
+
 from .models import Items
 from .models import Order
 from .models import Product
@@ -119,6 +120,8 @@ class OrderUpdateView(UpdateAPIView):
 class OrderRetrieveView(RetrieveAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer  
+
+
 
 
 

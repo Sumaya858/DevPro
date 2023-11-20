@@ -6,7 +6,7 @@ from .views import ItemsDeleteView
 from .views import ItemsUpdateView
 from .views import ItemsRetrieveView
 
-from .views import WhishlistListCreate
+from .views import WishlistListCreate
 from .views import WhishlistCreateView
 from .views import WhishlistListView
 from .views import WhishlistDeleteView
@@ -43,7 +43,7 @@ urlpatterns = [
     path('api/items/<pk>/update', ItemsUpdateView.as_view()),
     path('api/items/<pk>/retrieve', ItemsRetrieveView.as_view()),
 
-    path('api/whishlist/', WhishlistListCreate.as_view()),
+    path('api/whishlist/', WishlistListCreate.as_view()),
     path('api/whishlist/create/', WhishlistCreateView()),
     path('api/whishlist/list/',WhishlistListView.as_view()),
     path('api/whishlist/<pk>/delete', WhishlistDeleteView.as_view()),

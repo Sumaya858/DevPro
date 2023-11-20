@@ -4,7 +4,7 @@ from token_auth.models import User
 
 class Items(models.Model):
     name = models.CharField(max_length=500)
-    image = models.CharField(max_length=500)
+    image =  models.ImageField(null=True,blank=True, upload_to="images/") #upload_to='images/'
     owner = models.ForeignKey(User, related_name='itemuser', on_delete=models.CASCADE, default=1)
     description = models.CharField(max_length=1000)
 
