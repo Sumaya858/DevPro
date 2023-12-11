@@ -23,7 +23,7 @@ export default function App() {
     let token = localStorage.getItem("token")
     if (token != null) {
       // let user = jwt_decode(token)
-      let user =token
+      let user = token
       setIsAuth(true)
       setUser(user)
     } 
@@ -32,7 +32,7 @@ export default function App() {
       setIsAuth(false)
     }
 
-  }, [])
+  },[user])
 
   
 
@@ -102,6 +102,7 @@ export default function App() {
           
       <Link to="/signup"><strong>Signup</strong></Link> &nbsp;
       <Link to="/signin"><strong>Signin</strong></Link>&nbsp;&nbsp;
+      <Link to="/homepage"><strong>Homepage</strong></Link>&nbsp;&nbsp;
      
     </li>
       }
@@ -116,12 +117,12 @@ export default function App() {
 
 
       <Routes>
+      <Route path="/homepage" element={<Homepage />}></Route>
        <Route path="/signup" element={<Signup register={registerHandler}></Signup>}></Route>
        <Route path="/signin" element={isAuth ? <Navigate to='/homepage' /> : <Signin login={loginHandler}></Signin>}></Route>
-       <Route exact
-           path="/homepage" element={<Homepage />} 
+       
 
-          />
+         
       </Routes>
       
 
